@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://finlab.dexignlab.com/frontend/xhtml/index-2.html -->
+<html lang="en" dir="ltr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="FinLab : Crypto Trading UI Admin  Bootstrap 5 Template">
+	<meta property="og:title" content="FinLab : Crypto Trading UI Admin  Bootstrap 5 Template">
+	<meta property="og:description" content="FinLab : Crypto Trading UI Admin  Bootstrap 5 Template">
+	<meta property="og:image" content="https://finlab.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	<!-- PAGE TITLE HERE -->
+	<title>Checker CPF</title>
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="https://finlab.dexignlab.com/frontend/xhtml/images/favicon.png">
+	<link href="https://finlab.dexignlab.com/xhtml/vendor/wow-master/css/libs/animate.css" rel="stylesheet">
+	<link href="https://finlab.dexignlab.com/xhtml/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./index_files/bootstrap-select-country.min.css">
+	<link rel="stylesheet" href="./index_files/nice-select.css">
+	<link href="./index_files/bootstrap-datepicker.min.css" rel="stylesheet">
+	<!--swiper-slider-->
+	<link rel="stylesheet" href="./index_files/swiper-bundle.min.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+	<!-- Style css -->
+	<link href="./index_files/css2" rel="stylesheet">
+	<link href="https://finlab.dexignlab.com/frontend/xhtml/css/style.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/3a46d78787.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-typography="poppins" data-theme-version="dark" data-layout="horizontal" data-nav-headerbg="color_1"
+	data-headerbg="color_1" data-sidebar-style="mini" data-sidebarbg="color_1" data-sidebar-position="fixed"
+	data-header-position="static" data-container="boxed" direction="ltr" data-primary="color_1">
+
+	<!--*******
+        Preloader start
+    ********-->
+
+	<!--*******
+        Preloader end
+    ********-->
+	<!--************
+        Main wrapper start
+    *************-->
+	<div id="main-wrapper"><br><br>
+
+		<!--************
+        <div class="content-body" style="min-height: 1100px;">
+            <!-- row -->
+		<div class="container-fluid">
+			<!-- Row -->
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="row">
+						<div class="col-xl-12">
+							<div class="page-titles style1">
+								<div class="d-flex align-items-center">
+									<h2 class="heading">Checker CPF</h2>
+								</div>
+								<div class="d-flex flex-wrap my-2 my-sm-0">
+									<h2 class="heading" style="margin-right: 10px;margin-top: 1%">Status: <span id="status">Aguardando...</span></h2>
+									<button class="btn btn-outline-primary text-primary" id="stop">Parar</button>
+									<button class="btn btn-primary  btn-shadow" id="start">Iniciar</button>
+								</div>
+							</div>
+							<div class="progress mt-3 mb-3" id="progress" style="display: none;">
+								<div class="progress-bar bg-primary active progress-bar-striped" style="width: 0%;"
+									id="progressbar" role="progressbar">
+									<span class="sr-only">60% Complete</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="swiper mySwiper-counter position-relative overflow-hidden swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress swiper-backface-hidden">
+						<div class="swiper-wrapper " id="swiper-wrapper-1bdc2316778434ac" aria-live="polite">
+							<!--swiper-slide-->
+							<div class="swiper-slide swiper-slide-visible swiper-slide-active" role="group"
+								aria-label="1 / 4" style="width: 262.25px; margin-right: 30px;">
+								<div class="card counter">
+									<div class="card-body d-flex align-items-center">
+										<div class="card-box-icon">
+											<i class="fa fa-check fa-2x text-success"></i>
+
+										</div>
+										<div class="chart-num">
+											<h2 class="font-w600 mb-0"><span id="aprovadas">0</span></h2>
+											<p>Aprovadas</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide swiper-slide-visible swiper-slide-next" role="group"
+								aria-label="2 / 4" style="width: 262.25px; margin-right: 30px;">
+								<div class="card counter">
+									<div class="card-body d-flex align-items-center">
+										<div class="card-box-icon">
+											<i class="fa fa-close fa-2x text-danger"></i>
+										</div>
+										<div class="chart-num">
+											<h2 class="font-w600 mb-0"><span id="reprovadas">0</span></h2>
+											<p>Reprovadas</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="swiper-slide swiper-slide-visible" role="group" aria-label="3 / 4"
+								style="width: 262.25px; margin-right: 30px;">
+								<div class="card counter">
+									<div class="card-body d-flex align-items-center">
+										<div class="card-box-icon">
+											<i class="fa-solid fa-memo-circle-check text-warning fa-2x"></i>
+										</div>
+										<div class="chart-num">
+											<h2 class="font-w600 mb-0"><span id="testadas">0</span></h2>
+											<p>
+												Testadas
+											</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="swiper-slide swiper-slide-visible" role="group" aria-label="4 / 4"
+								style="width: 262.25px; margin-right: 30px;">
+								<div class="card counter">
+									<div class="card-body d-flex align-items-center">
+										<div class="card-box-icon">
+
+											<i class="fa-thin fa-spinner text-primary fa-2x"></i>
+										</div>
+										<div class="chart-num">
+											<h2 class="font-w600 mb-0"><span id="carregadas">0</span></h2>
+											<p>
+												Carregadas
+											</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+					</div>
+
+					<div class="row">
+
+						<div class="mb-3">
+							<textarea class="form-control" rows="7" id="list"></textarea>
+						</div>
+
+						<div class="accordion accordion-primary">
+							<div class="accordion-item">
+								<div class="accordion-header rounded-lg" id="headingOne" data-bs-toggle="collapse"
+									data-bs-target="#collapseOne" aria-controls="collapseOne" aria-expanded="true"
+									role="button">
+									<span class="accordion-header-icon"></span>
+									<span class="accordion-header-text">Aprovadas</span>
+								</div>
+								<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+									data-bs-parent="#accordion-one">
+									<div class="accordion-body-text" id="ap"></div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header rounded-lg collapsed" id="headingTwo"
+									data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-controls="collapseTwo"
+									role="button" aria-expanded="false">
+									<span class="accordion-header-text">Reprovadas</span>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+									data-bs-parent="#accordion-one">
+									<div class="accordion-body-text" id="rp"></div>
+								</div>
+							</div>
+
+						</div>
+						<!--/column-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--************
+            Content body end
+        *************-->
+
+	</div>
+	<!--************
+        Main wrapper end
+    *************-->
+	<!-- Required vendors -->
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/global/global.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/apexchart/apexchart.js"></script>
+	<!-- Chart piety plugin files -->
+	<script src=".https://finlab.dexignlab.com/xhtml/vendor/peity/jquery.peity.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/jquery-nice-select/jquery.nice-select.min.js"></script>
+	<!--swiper-slider-->
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/swiper/js/swiper-bundle.min.js"></script>
+	<!-- Dashboard 1 -->
+	<script src="https://finlab.dexignlab.com/xhtml/js/dashboard/dashboard-1.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/wow-master/dist/wow.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/bootstrap-datetimepicker/js/moment.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/datepicker/js/ootstrap-datepicker.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/vendor/bootstrap-select-country/js/bootstrap-select-country.min.js"></script>
+
+	<script src="https://finlab.dexignlab.com/xhtml/js/custom.min.js"></script>
+	<script src="https://finlab.dexignlab.com/xhtml/js/demo.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script>
+		function getuser(url)
+		{
+
+		let pieces = url.split("/");
+		let piecesx = pieces[2].split(".");
+
+		return piecesx[0];
+
+		}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function asyncAjax(options){
+    return new Promise(function(resolve, reject) {
+        options.success = resolve;
+        options.error = reject;
+        $.ajax(options);
+    });
+}
+
+    
+    
+    var audio = new Audio('assets/success.mp3');
+    $(document).ready(function() {
+        $('#status').html('<span id="bad" class="badge badge-dark">Não iniciado</span>');
+        $('#start').attr('disabled', null);
+        $('#stop').attr('disabled', 'disabled');
+        $('#start').click(async function() {
+
+                document.getElementById("progress").style.display = 'block';
+                $('#results').css('display', 'block');
+                $('#list').css('display', 'none');
+                audio.play();
+                var line = $('#list').val().split('\n');
+                var cpf = $('#list').val();
+                var total = line.length;
+                var ap = 0;
+                var rp = 0;
+                var sd = 0;
+                $('#carregadas').html(total);
+
+                const numbers_cpf = cpf.split(/\r\n|\r|\n/).length;
+                let operations = cpf.split(/\r\n|\r|\n/).length;
+                let pause_operation = 0;
+                $('#status').html('<span id="bad" class="badge badge-primary"><i class="fa fa-spinner fa-spin fa-fw"></i> Testando.</span>');
+
+
+
+                var lines = cpf.split("\n").filter(line => !!line);
+
+
+                var dados = lines;
+
+                function replaceAll(string, search, replace) {
+                return string.split(search).join(replace);
+                }
+
+
+
+
+                for (let i = 0; i < dados.length; i ++){
+
+
+                //console.log(replaceAll(dados[i].toString(), ',', '\n')); 
+                var dadoskey = replaceAll(dados[i].toString(), ',', '\n');
+                
+                var ajaxCall = await $.ajax({
+                            url: "https://node.pixland.com.br/api/regular/v2/"+dadoskey,
+                            //data: {chaves:dadoskey},
+                            type: 'GET',
+                            async: false,
+                            timeout: 200000,
+                            beforeSend: function() {
+                                
+                                $('#stop').attr('disabled', null);
+                                $('#start').attr('disabled', 'disabled');
+                            },
+                            success: function(data) {
+
+                                var retorno = data;
+
+                                if(retorno.code == 0)
+                                {
+
+
+                                    let p = 0;
+
+
+									try{
+
+										if(retorno.data.details.SituacaoCadastral.Situacao != "REGULAR")
+										{
+											var mensagem = dadoskey+"|"+retorno.data.details.Nome+"|"+retorno.data.details.DataNascimento+"|"+retorno.data.details.Mae+"<br>";
+											
+											rp++;
+											
+											$('#reprovadas').html(rp);
+											document.getElementById("rp").innerHTML += mensagem;
+											removelinha();
+											toastr.error("+- Reprovada");
+										}
+										else
+										{
+											var mensagem = dadoskey+"|"+retorno.data.details.Nome+"|"+retorno.data.details.DataNascimento+"|"+retorno.data.details.Mae+"<br>";
+											
+											ap++;
+											$('#aprovadas').html(ap);
+											document.getElementById("ap").innerHTML += mensagem;
+											audio.play();
+											removelinha();
+											toastr.success("+1 Aprovada");
+										}
+										p++;
+									
+									}catch(error){
+										rp++;
+										var mensagem = dadoskey+"<br>";
+											
+										$('#reprovadas').html(rp);
+										document.getElementById("rp").innerHTML += mensagem;
+										removelinha();
+										toastr.error("+- Reprovada");
+									}
+
+                                    
+                                }
+
+                                
+
+                                var fila = parseInt(ap) + parseInt(rp);
+                                document.getElementById("progressbar").style.width = Math.round((fila * 100) / total) + "%";
+                                $('#testadas').html(fila);
+                                if (fila == total) {
+
+                                    toastr.info("Teste finalizado!");
+                                    $('#list').css('display', 'block');
+                                    $('#start').attr('disabled', null);
+                                    $('#stop').attr('disabled', 'disabled');
+                                    $('#status').html('<span id="bad" class="badge badge-primary"><i class="fa fa-check" aria-hidden="true"></i> Teste Finalizado!</span>');
+                                    audio.play();
+                                }
+                            },
+							error: function (request, status, error) {
+								rp++;
+								var mensagem = dadoskey+"<br>";
+									
+								$('#reprovadas').html(rp);
+								document.getElementById("rp").innerHTML += mensagem;
+								removelinha();
+								toastr.error("+- Reprovada");
+							}
+                            /*else{
+
+                                toastr.error(dados.message);
+								$('#list').css('display', 'block');
+								$('#start').attr('disabled', null);
+								$('#stop').attr('disabled', 'disabled');
+								$('#status').html('<span id="bad" class="badge badge-primary"><i class="fa fa-check" aria-hidden="true"></i> Teste Finalizado!</span>');
+								audio.play();
+
+                            }*/
+                        //}
+
+                        });
+
+                        await sleep(1000);
+
+                }
+
+
+                
+            
+
+
+            $('#clear').click(function() {
+                $('#status').html('<span class="badge badge-secondary">Lista Limpa!</span>');
+                $('#list').val('');
+            });
+        });
+    });
+
+    function aprovadas(str) {
+        $(".aprovadas").append(str + "<br>");
+    }
+
+    function reprovadas(str) {
+        $(".reprovadas").append(str + "<br>");
+    }
+
+    function removelinha() {
+        var lines = $("#list").val().split('\n');
+        lines.splice(0, 1);
+        $("#list").val(lines.join("\n"));
+    }
+</script>
+
+	<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
+		xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+		style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
+		<defs id="SvgjsDefs1002"></defs>
+		<polyline id="SvgjsPolyline1003" points="0,0"></polyline>
+		<path id="SvgjsPath1004"
+			d="M-1 327.3028571428571L-1 327.3028571428571L119.1332000732422 327.3028571428571L238.2664001464844 327.3028571428571L357.3996002197266 327.3028571428571L476.5328002929688 327.3028571428571L595.6660003662109 327.3028571428571C595.6660003662109 327.3028571428571 595.6660003662109 327.3028571428571 595.6660003662109 327.3028571428571 ">
+		</path>
+	</svg>
+</body>
+
+</html>

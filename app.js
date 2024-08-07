@@ -38,13 +38,18 @@ app.get('/api/regular/:param*', (req, res) => {
     ws.onmessage = (event) => {
         
         const obj = JSON.parse(event.data);
-        console.log(obj);
+        
 
-
-        if(obj.data.result == 0)
-        res.json(obj);
+        if(obj.data.result == 0){
+            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Nome);
+            res.json(obj);
+        }
+        
         if(obj.data.result == '-3081')
-        res.json(obj);
+        {
+            console.log("ERRO CONSULTA CPF: "+req.params.param);
+            res.json(obj);
+        }
     
     }
 

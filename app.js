@@ -42,7 +42,7 @@ app.get('/api/regular/:param*', (req, res) => {
         
 
         if(obj.data.result == 0){
-            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Nome+", IP:"+ipAddress);
+            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Nome+", IP: "+ipAddress);
             res.json(obj);
         }
         

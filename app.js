@@ -23,7 +23,7 @@ app.use(cors())
 app.get('/api/regular/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-ws-re.betcoswarm.com/");
-    const ipAddress = req.socket.remoteAddress;
+    const ipAddress = req.header('x-forwarded-for');
 
     ws.on('open', () => {
 

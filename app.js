@@ -23,6 +23,7 @@ app.use(cors())
 app.get('/api/regular/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-ws-re.betcoswarm.com/");
+    const ipAddress = req.socket.remoteAddress;
 
     ws.on('open', () => {
 
@@ -41,7 +42,7 @@ app.get('/api/regular/:param*', (req, res) => {
         
 
         if(obj.data.result == 0){
-            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Nome);
+            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Nome+", IP:"+ipAddress);
             res.json(obj);
         }
         

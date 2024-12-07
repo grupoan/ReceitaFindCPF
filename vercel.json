@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/regular/:match*",
+        "destination": "/api/regular"
+      }
+    ]
+  }

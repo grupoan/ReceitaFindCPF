@@ -111,3 +111,6 @@ console.log(raw)
 
 
 app.listen(3999, () => console.log('server started'));
+
+// Export the Express API
+module.exports = app;

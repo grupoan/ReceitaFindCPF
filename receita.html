@@ -288,7 +288,7 @@ function asyncAjax(options){
                 var dadoskey = replaceAll(dados[i].toString(), ',', '\n');
                 
                 var ajaxCall = await $.ajax({
-                            url: "https://receita-find-cpf.onrender.com/api/regular/v2/"+dadoskey,
+                            url: "http://localhost:3999/api/regular/"+dadoskey,
                             //data: {chaves:dadoskey},
                             type: 'GET',
                             async: false,

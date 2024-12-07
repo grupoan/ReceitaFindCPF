@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/api/regular/:match*",
-        "destination": "/api/regular"
+        "source": "/api/regular/:param*",
+        "destination": "/api/regular/:param*"
       }
     ]
   }

@@ -29,7 +29,7 @@ app.get('/api/regular/:param*', (req, res) => {
 
         let hash = md5(Date.now())
     
-        ws.send('{"command":"request_session","params":{"language":"por_2","site_id":18750115,"source":42,"release_date":"15/12/2023-07:24"},"rid":"'+hash+'"}')
+        ws.send('{"command":"request_session","params":{"language":"por_2","site_id":692,"source":42,"release_date":"02/11/2025-17:51"},"rid":"'+hash+'"}')
         ws.send('{"command":"validate_cpfs","params":{"cpfs":"'+req.params.param+'"},"rid":"'+hash+'"}')
         console.log("CONSULTANDO CPF: "+req.params.param)
        

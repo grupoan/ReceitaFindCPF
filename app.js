@@ -10,9 +10,6 @@ const cron = require('node-cron');
 const md5 = require('md5')
 const Grecaptcha = require('grecaptcha')
 
-let TOKEN = "eyJpdiI6ImJlVDlqcmhZSFRORS9EUkdWalAyR2c9PSIsInZhbHVlIjoiclcvcjVtN2VheTEraFJxdVdnb0pIMlZ5ZCsraDFna1c2aFRMV20reW4vazZlYjFyMmxwM0FCR3VkbjFCTnlac0xpaXZiZTRQUWQvVDljeEVBVnBZMVpGL1o1V3ljR1d5aFJqMkdTN01GeE9xK3k2ZVZJY1NqSGdGRWV3OEZuVHEiLCJtYWMiOiI5MGJjZDk0NTQ3MzMxZDFmZGQ4N2E4M2U0ZTU0NThiNDk1MjdmMTI0NjBlYTcyZDhjZjVjZDk1NDJmZjZjNTEwIiwidGFnIjoiIn0=";
-
-
 const app = express();
 
 app.use(bodyParser.json());

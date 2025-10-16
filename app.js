@@ -213,6 +213,7 @@ else if(text?.code == "REQUEST_VALIDATION")
 
 });
 
+//https://www.vbet.bet.br/pb/
 app.get('/api/regular/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-newm.vbet.bet.br/");

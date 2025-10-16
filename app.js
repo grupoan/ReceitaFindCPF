@@ -304,7 +304,7 @@ app.get('/api/v4/:param*', (req, res) => {
 
         }
         else if(obj.data.result == 0){
-            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.Name+", IP: "+ipAddress);
+            console.log("CONSULTA CPF: "+req.params.param+", NOME: "+obj.data.details.FirstName+", IP: "+ipAddress);
             res.json(obj);
             ws.close();
         }

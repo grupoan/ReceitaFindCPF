@@ -42,179 +42,12 @@ function GN(quantidade) {
 
 cron.schedule('*/10 * * * *', () => {
   console.log('Tarefa executada a cada 10 minutos!');
-  (async function() {
-
-    const url = 'https://www.playuzu.bet.br/son-auth/re-registration/brazilian/status';
-
-const data = '{"personalID":"85831877540","mobile":null,"dateOfBirth":null,"captcha":null}';
-
-const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-        'Cookie': '_uetsid=1785f400aa3411f0974e252a5d003c28; _uetvid=178638e0aa3411f0b52a35e33465b7f6; son_consent={"version":1,"categories":{"necessary":true,"functionality":true,"tracking":true,"targeting":true,"country":"BR"}}; _clsk=15ul46b%5E1760580117342%5E1%5E1%5Ez.clarity.ms%2Fcollect; _clck=1xueabu%5E2%5Eg07%5E0%5E2115; _rdt_uuid=1760580115283.45c869cc-3508-44cc-92fd-eddd6d8edd9e; Referer=; _gcl_au=1.1.998326512.1760580115; AUTH-XSRF-TOKEN=eyJpdiI6ImJlVDlqcmhZSFRORS9EUkdWalAyR2c9PSIsInZhbHVlIjoiclcvcjVtN2VheTEraFJxdVdnb0pIMlZ5ZCsraDFna1c2aFRMV20reW4vazZlYjFyMmxwM0FCR3VkbjFCTnlac0xpaXZiZTRQUWQvVDljeEVBVnBZMVpGL1o1V3ljR1d5aFJqMkdTN01GeE9xK3k2ZVZJY1NqSGdGRWV3OEZuVHEiLCJtYWMiOiI5MGJjZDk0NTQ3MzMxZDFmZGQ4N2E4M2U0ZTU0NThiNDk1MjdmMTI0NjBlYTcyZDhjZjVjZDk1NDJmZjZjNTEwIiwidGFnIjoiIn0%3D; son_auth=eyJpdiI6IlVtWGNIVDVXUEtwZkdWWG9LQlcrL3c9PSIsInZhbHVlIjoiTnFNKzVoc3ZNUFN2UXdBVCs0MHpQOHdQV0NUNmxnOHFDTG44dUFuTGRPZlhzckdUWGtiNjUvdnB5eURYT3FTa0pWMk1PMXVZbjRLdWhIUGZ5cklLVGN2dlBVL1N1S3lvM2tISDBFZSt6UkFJOHJyZFdrRTk0L0xYRWFURlM4WEsiLCJtYWMiOiJmMDJiMmUzNjdmODg5YjZiN2QyYzkwNDllZjZhMGIwNjNhMmIwMGM1YThjZTVmZmVmM2VkNzEzNGUxOGZmNDUxIiwidGFnIjoiIn0%3D; Aname=alpt01_br; Dyn_id=sports; Dyn_id_original=sports; Operation=aname%3Dalpt01_br%26zone_id%3Dsports; Zone_id=sports; tracker=alpt01_br%2Asports',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Site': 'same-origin',
-        'Content-Length': '76',
-        'Accept-Language': 'pt-BR,pt;q=0.9',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Sec-Fetch-Mode': 'cors',
-        'lang': 'pt-BR',
-        'x-xsrf-token': TOKEN,
-        'isnative': '0',
-        'Priority': 'u=3, i',
-        'dynid': 'sports',
-        'affiliate': 'alpt01_br',
-        'family': 'PlayUZU',
-        'x-environment': 'production',
-        'zoneid': 'sports',
-    },
-    body: data,
-});
-
-const text = await response.json();
-    console.log("CONSULTA CPF: "+text);
-
-})();
 
 });
 
-//https://www.playuzu.bet.br/lp/50-free-spins/
-app.get('/api/v1/:param*', (req, res) => {
-
-    const ipAddress = req.header('x-forwarded-for');
-
-    (async function() {
-
-    const url = 'https://www.playuzu.bet.br/son-auth/re-registration/brazilian/status';
-
-const data = '{"personalID":"'+req.params.param+'","mobile":null,"dateOfBirth":null,"captcha":null}';
-
-const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-        'Cookie': '_uetsid=1785f400aa3411f0974e252a5d003c28; _uetvid=178638e0aa3411f0b52a35e33465b7f6; son_consent={"version":1,"categories":{"necessary":true,"functionality":true,"tracking":true,"targeting":true,"country":"BR"}}; _clsk=15ul46b%5E1760580117342%5E1%5E1%5Ez.clarity.ms%2Fcollect; _clck=1xueabu%5E2%5Eg07%5E0%5E2115; _rdt_uuid=1760580115283.45c869cc-3508-44cc-92fd-eddd6d8edd9e; Referer=; _gcl_au=1.1.998326512.1760580115; AUTH-XSRF-TOKEN=eyJpdiI6ImJlVDlqcmhZSFRORS9EUkdWalAyR2c9PSIsInZhbHVlIjoiclcvcjVtN2VheTEraFJxdVdnb0pIMlZ5ZCsraDFna1c2aFRMV20reW4vazZlYjFyMmxwM0FCR3VkbjFCTnlac0xpaXZiZTRQUWQvVDljeEVBVnBZMVpGL1o1V3ljR1d5aFJqMkdTN01GeE9xK3k2ZVZJY1NqSGdGRWV3OEZuVHEiLCJtYWMiOiI5MGJjZDk0NTQ3MzMxZDFmZGQ4N2E4M2U0ZTU0NThiNDk1MjdmMTI0NjBlYTcyZDhjZjVjZDk1NDJmZjZjNTEwIiwidGFnIjoiIn0%3D; son_auth=eyJpdiI6IlVtWGNIVDVXUEtwZkdWWG9LQlcrL3c9PSIsInZhbHVlIjoiTnFNKzVoc3ZNUFN2UXdBVCs0MHpQOHdQV0NUNmxnOHFDTG44dUFuTGRPZlhzckdUWGtiNjUvdnB5eURYT3FTa0pWMk1PMXVZbjRLdWhIUGZ5cklLVGN2dlBVL1N1S3lvM2tISDBFZSt6UkFJOHJyZFdrRTk0L0xYRWFURlM4WEsiLCJtYWMiOiJmMDJiMmUzNjdmODg5YjZiN2QyYzkwNDllZjZhMGIwNjNhMmIwMGM1YThjZTVmZmVmM2VkNzEzNGUxOGZmNDUxIiwidGFnIjoiIn0%3D; Aname=alpt01_br; Dyn_id=sports; Dyn_id_original=sports; Operation=aname%3Dalpt01_br%26zone_id%3Dsports; Zone_id=sports; tracker=alpt01_br%2Asports',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Site': 'same-origin',
-        'Content-Length': '76',
-        'Accept-Language': 'pt-BR,pt;q=0.9',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Sec-Fetch-Mode': 'cors',
-        'lang': 'pt-BR',
-        'x-xsrf-token': TOKEN,
-        'isnative': '0',
-        'Priority': 'u=3, i',
-        'dynid': 'sports',
-        'affiliate': 'alpt01_br',
-        'family': 'PlayUZU',
-        'x-environment': 'production',
-        'zoneid': 'sports',
-    },
-    body: data,
-});
-
-const text = await response.json();
-
-
-if(text == null){
-    console.log("CONSULTA CPF: "+req.params.param);
-
-}
-
-else if(text?.fullName){
-    console.log("CONSULTA CPF: "+req.params.param+", NOME: "+text.fullName+", IP: "+ipAddress);
-    res.json(text);
-}
-
-else if(text?.code == "REQUEST_VALIDATION")
-{
-    console.log("ERRO CONSULTA CPF: "+req.params.param);
-    res.json(text);
-}
-
-//res.json(text);
-
-
-
-})();
-    
-
-
-});
-
-//https://www.bacanaplay.bet.br/lp/jogue-e-ganhe/
-app.get('/api/v2/:param*', (req, res) => {
-
-    const ipAddress = req.header('x-forwarded-for');
-
-    (async function() {
-
-    const url = 'https://www.bacanaplay.bet.br/son-auth/re-registration/brazilian/status';
-
-const data = '{"personalID":"'+req.params.param+'","mobile":null,"dateOfBirth":null,"captcha":null}';
-
-const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-        'Cookie': '_uetsid=1785f400aa3411f0974e252a5d003c28; _uetvid=178638e0aa3411f0b52a35e33465b7f6; son_consent={"version":1,"categories":{"necessary":true,"functionality":true,"tracking":true,"targeting":true,"country":"BR"}}; _clsk=15ul46b%5E1760580117342%5E1%5E1%5Ez.clarity.ms%2Fcollect; _clck=1xueabu%5E2%5Eg07%5E0%5E2115; _rdt_uuid=1760580115283.45c869cc-3508-44cc-92fd-eddd6d8edd9e; Referer=; _gcl_au=1.1.998326512.1760580115; AUTH-XSRF-TOKEN=eyJpdiI6ImJlVDlqcmhZSFRORS9EUkdWalAyR2c9PSIsInZhbHVlIjoiclcvcjVtN2VheTEraFJxdVdnb0pIMlZ5ZCsraDFna1c2aFRMV20reW4vazZlYjFyMmxwM0FCR3VkbjFCTnlac0xpaXZiZTRQUWQvVDljeEVBVnBZMVpGL1o1V3ljR1d5aFJqMkdTN01GeE9xK3k2ZVZJY1NqSGdGRWV3OEZuVHEiLCJtYWMiOiI5MGJjZDk0NTQ3MzMxZDFmZGQ4N2E4M2U0ZTU0NThiNDk1MjdmMTI0NjBlYTcyZDhjZjVjZDk1NDJmZjZjNTEwIiwidGFnIjoiIn0%3D; son_auth=eyJpdiI6IlVtWGNIVDVXUEtwZkdWWG9LQlcrL3c9PSIsInZhbHVlIjoiTnFNKzVoc3ZNUFN2UXdBVCs0MHpQOHdQV0NUNmxnOHFDTG44dUFuTGRPZlhzckdUWGtiNjUvdnB5eURYT3FTa0pWMk1PMXVZbjRLdWhIUGZ5cklLVGN2dlBVL1N1S3lvM2tISDBFZSt6UkFJOHJyZFdrRTk0L0xYRWFURlM4WEsiLCJtYWMiOiJmMDJiMmUzNjdmODg5YjZiN2QyYzkwNDllZjZhMGIwNjNhMmIwMGM1YThjZTVmZmVmM2VkNzEzNGUxOGZmNDUxIiwidGFnIjoiIn0%3D; Aname=alpt01_br; Dyn_id=sports; Dyn_id_original=sports; Operation=aname%3Dalpt01_br%26zone_id%3Dsports; Zone_id=sports; tracker=alpt01_br%2Asports',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Site': 'same-origin',
-        'Content-Length': '76',
-        'Accept-Language': 'pt-BR,pt;q=0.9',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Sec-Fetch-Mode': 'cors',
-        'lang': 'pt-BR',
-        'x-xsrf-token': TOKEN,
-        'isnative': '0',
-        'Priority': 'u=3, i',
-        'dynid': 'sports',
-        'affiliate': 'alpt01_br',
-        'family': 'PlayUZU',
-        'x-environment': 'production',
-        'zoneid': 'sports',
-    },
-    body: data,
-});
-
-const text = await response.json();
-
-
-if(text == null){
-    console.log("CONSULTA CPF: "+req.params.param);
-
-}
-
-else if(text?.fullName){
-    console.log("CONSULTA CPF: "+req.params.param+", NOME: "+text.fullName+", IP: "+ipAddress);
-    res.json(text);
-}
-
-else if(text?.code == "REQUEST_VALIDATION")
-{
-    console.log("ERRO CONSULTA CPF: "+req.params.param);
-    res.json(text);
-}
-
-//res.json(text);
-
-
-
-})();
-    
-
-
-});
 
 //https://www.vbet.bet.br/pb/
-app.get('/api/v3/:param*', (req, res) => {
+app.get('/api/v1/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-newm.vbet.bet.br/");
     const ipAddress = req.header('x-forwarded-for');
@@ -272,7 +105,7 @@ app.get('/api/v3/:param*', (req, res) => {
 
 
 //https://www.seguro.bet.br/?accounts=%2A&register=%2A
-app.get('/api/v4/:param*', (req, res) => {
+app.get('/api/v2/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -331,7 +164,7 @@ app.get('/api/v4/:param*', (req, res) => {
 });
 
 //https://www.galera.bet.br/register
-app.get('/api/v5/:param*', (req, res) => {
+app.get('/api/v3/:param*', (req, res) => {
 
     const ipAddress = req.header('x-forwarded-for');
 
@@ -373,7 +206,7 @@ else{
 });
 
 //https://7games.bet.br/pb/
-app.get('/api/v6/:param*', (req, res) => {
+app.get('/api/v4/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -422,7 +255,7 @@ app.get('/api/v6/:param*', (req, res) => {
 });
 
 //https://www.h2.bet.br/?accounts=*&register=*
-app.get('/api/v7/:param*', (req, res) => {
+app.get('/api/v5/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -471,7 +304,7 @@ app.get('/api/v7/:param*', (req, res) => {
 });
 
 //https://papigames.bet.br/signup
-app.get('/api/v8/:param*', (req, res) => {
+app.get('/api/v6/:param*', (req, res) => {
 
     const ipAddress = req.header('x-forwarded-for');
 

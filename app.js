@@ -44,7 +44,7 @@ cron.schedule('*/10 * * * *', () => {
 
 
 //https://www.vbet.bet.br/pb/
-app.get('/api/v1/:param*', (req, res) => {
+app.get('/cpf/v1/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-newm.vbet.bet.br/");
     const ipAddress = req.header('x-forwarded-for');
@@ -91,7 +91,7 @@ app.get('/api/v1/:param*', (req, res) => {
 
 
 //https://www.seguro.bet.br/?accounts=%2A&register=%2A
-app.get('/api/v2/:param*', (req, res) => {
+app.get('/cpf/v2/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -133,7 +133,7 @@ app.get('/api/v2/:param*', (req, res) => {
 });
 
 //https://www.galera.bet.br/register
-app.get('/api/v3/:param*', (req, res) => {
+app.get('/cpf/v3/:param*', (req, res) => {
 
     const ipAddress = req.header('x-forwarded-for');
 
@@ -166,7 +166,7 @@ app.get('/api/v3/:param*', (req, res) => {
 });
 
 //https://7games.bet.br/pb/
-app.get('/api/v4/:param*', (req, res) => {
+app.get('/cpf/v4/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -205,7 +205,7 @@ app.get('/api/v4/:param*', (req, res) => {
 });
 
 //https://www.h2.bet.br/?accounts=*&register=*
-app.get('/api/v5/:param*', (req, res) => {
+app.get('/cpf/v5/:param*', (req, res) => {
 
     let ws = new WebSocket("wss://eu-swarm-springre.trexname.com/");
     const ipAddress = req.header('x-forwarded-for');
@@ -243,7 +243,7 @@ app.get('/api/v5/:param*', (req, res) => {
 });
 
 //https://papigames.bet.br/signup
-app.get('/api/v6/:param*', (req, res) => {
+app.get('/cpf/v6/:param*', (req, res) => {
 
     const ipAddress = req.header('x-forwarded-for');
 
@@ -282,6 +282,49 @@ app.get('/api/v6/:param*', (req, res) => {
 
         } else {
             console.log("CONSULTA CPF: " + req.params.param + ", NOME: " + text.result.firstname + ", IP: " + ipAddress);
+            res.json(text);
+        }
+
+    })();
+
+});
+
+//bndes.gov.br - novo cartão
+app.get('/cnpj/v1/:param*', (req, res) => {
+
+    const ipAddress = req.header('x-forwarded-for');
+
+    (async function() {
+
+        const url = 'https://ws.bndes.gov.br/canal-mpme/rest/public/receita/'+ req.params.param;
+
+        const response = await fetch(url, {
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Sec-Fetch-Site': 'same-origin',
+                'Cookie': '_fbp=fb.2.1761331075119.477422043643171599; _ga=GA1.1.520822218.1761331075; _ga_4H51WV497X=GS2.1.s1761331075$o1$g1$t1761331075$j60$l0$h0; PME_UX_JSESSIONID=0000drXGII9n-pDlj1HFXn0zkkM:98357716-7f37-4f9b-b294-608d19c1c26d',
+                'Referer': 'https://ws.bndes.gov.br/canal-mpme/index.html',
+                'Sec-Fetch-Dest': 'empty',
+                'Accept-Language': 'pt-BR,pt;q=0.9',
+                'Sec-Fetch-Mode': 'cors',
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+                'Priority': 'u=3, i',
+            },
+        });
+
+
+        const text = await response.json();
+
+        console.log(text);
+
+        if (!text?.cpfCnpjOkNaReceita) {
+            console.log("CONSULTA CNPJ: " + req.params.param);
+            res.json(text);
+
+        } else {
+            console.log("CONSULTA CNPJ: " + req.params.param + ", NOME: " + text.nome + ", IP: " + ipAddress);
             res.json(text);
         }
 
